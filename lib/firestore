@@ -1,0 +1,46 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /RSI/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /testma_1/{document} {
+      allow create: if false;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /testma_2/{document} {
+      allow create: if false;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /EMA/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /MACD/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /YEAR_HIGH_LOW/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+  }
+}
